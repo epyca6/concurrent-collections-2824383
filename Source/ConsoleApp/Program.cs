@@ -11,7 +11,7 @@ namespace ConsoleApp {
 				try
 				{
 				//Demo1();	
-				//Demo2();
+				Demo2();
 			} catch (Exception ex)
 				{
 
@@ -42,7 +42,7 @@ namespace ConsoleApp {
 			_robots = new Queue<Robot>();
 			Task task1 = Task.Run(() => SetupTeam1());
 			Task task2 = Task.Run(() => SetupTeam2());
-			Task.WaitAll(task1, task2);
+			Task.WaitAll(task1, task2);	//wait until the 2 task is not finished
 			Robot robot;
 			Console.WriteLine();
 			while (_robots.Count >0)
